@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "676706330164",
+    "firebase_url": "https://user-app-robby-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "user-app-robby",
+    "storage_bucket": "user-app-robby.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676706330164:android:2533323144ad7165704c61",
+        "android_client_info": {
+          "package_name": "com.nyimpang.nyimpang_cooperative"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVEzJlcyIOaH8FglFzzstmddx-d4K9_BE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676706330164:android:5aa24b131182ba8c704c61",
+        "android_client_info": {
+          "package_name": "project.robby.userappnative"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVEzJlcyIOaH8FglFzzstmddx-d4K9_BE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
