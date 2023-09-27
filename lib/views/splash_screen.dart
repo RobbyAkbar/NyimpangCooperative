@@ -18,14 +18,14 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> screenNavigate() async {
-    bool isUserLogedIn = await UserAuth().isUserLoggedIn();
+    bool isUserLoggedIn = await UserAuth().isUserLoggedIn();
 
     Future.delayed(const Duration(seconds: 3)).then((value) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (cntxt) =>
-              isUserLogedIn == false ? const LoginPage() : const BottomNav(),
+          builder: (context) =>
+              isUserLoggedIn == false ? const LoginPage() : const BottomNav(),
         ),
       );
     });

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -239,7 +240,6 @@ class _SignInState extends State<SignIn> {
         email: email,
         password: password,
       );
-      _isLoginInProgress = false;
       if (mounted) {
         setState(() {});
       }
@@ -253,18 +253,25 @@ class _SignInState extends State<SignIn> {
           );
         });
       } else if (userCredential.user?.emailVerified == true) {
-        final UserModel user = UserModel(
-          userEmail: email,
-          userId: userCredential.user!.uid,
-        );
-        await UserAuth().saveUserAuth(user);
-        if (mounted) {
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => const BottomNav()),
-            (route) => false,
-          );
-        }
+        FirebaseFirestore.instance
+            .collection('users')
+            .doc(userCredential.user!.uid)
+            .get()
+            .then((DocumentSnapshot documentSnapshot) async {
+          final UserModel user = UserModel(
+              userEmail: email,
+              userId: userCredential.user!.uid,
+              userName: userCredential.user!.displayName,
+              role: documentSnapshot['role']);
+          await UserAuth().saveUserAuth(user);
+          if (mounted) {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const BottomNav()),
+              (route) => false,
+            );
+          }
+        });
       }
     } on FirebaseAuthException catch (e) {
       if (e.code.contains('INVALID_LOGIN_CREDENTIALS') == true) {

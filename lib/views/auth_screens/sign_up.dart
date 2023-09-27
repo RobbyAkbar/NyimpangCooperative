@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -335,6 +336,18 @@ class _SignUpState extends State<SignUp> {
       await userCredential.user?.updateDisplayName(name);
       await userCredential.user?.sendEmailVerification();
       showToastMessage('Account activation URL has been sent to your email.');
+
+      FirebaseFirestore fireStore = FirebaseFirestore.instance;
+      Map<String, dynamic> user = {
+        'displayName': name,
+        'email': email,
+        'created_at': FieldValue.serverTimestamp(),
+        'role': 'user'
+      };
+      fireStore.collection('users').doc(userCredential.user?.uid).set(user).catchError((onError) {
+        showToastMessage(onError.toString());
+      });
+
       return true;
     } on FirebaseAuthException catch (e) {
       if (e.code.contains('weak-password') == true) {

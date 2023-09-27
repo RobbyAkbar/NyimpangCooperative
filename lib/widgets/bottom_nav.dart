@@ -1,3 +1,4 @@
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:nyimpang_cooperative/utils/iconly/iconly_bold.dart';
 import 'package:nyimpang_cooperative/utils/styles.dart';
@@ -34,27 +35,23 @@ class _BottomNavState extends State<BottomNav> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: ConvexAppBar(
+        activeColor: Styles.secondaryColor,
         backgroundColor: Styles.primaryColor, //Repository.navbarColor(context),
-        selectedLabelStyle: TextStyle(color: Styles.secondaryColor),
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Styles.secondaryColor, //Repository.selectedItemColor(context),
-        unselectedItemColor: Styles.whiteColor,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(IconlyBold.Home),
-            label: 'Home',
+        items: [
+          TabItem(
+            icon: Icon(IconlyBold.Home, color: Styles.whiteColor),
+            title: 'Home',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(IconlyBold.Chat),
-            label: 'Chat',
+          TabItem(
+            icon: Icon(IconlyBold.Chat, color: Styles.whiteColor),
+            title: 'Chat',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(IconlyBold.Profile),
-            label: 'Profile',
+          TabItem(
+            icon: Icon(IconlyBold.Profile, color: Styles.whiteColor),
+            title: 'Profile',
           ),
         ],
-        currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
     );

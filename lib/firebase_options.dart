@@ -44,41 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCQn0VmNDLSDmEaqtK7wl1gF36erFYVmpg',
-    appId: '1:676706330164:web:cd620dfd80d87a8e704c61',
-    messagingSenderId: '676706330164',
-    projectId: 'user-app-robby',
-    authDomain: 'user-app-robby.firebaseapp.com',
-    databaseURL: 'https://user-app-robby-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'user-app-robby.appspot.com',
+    apiKey: 'AIzaSyC_YFNS3RNxAmzPN4ZYbyK2F3Eu9st0ras',
+    appId: '1:833957584926:web:53de7cab6d6fdda8408e0f',
+    messagingSenderId: '833957584926',
+    projectId: 'nyimpang-cooperative',
+    authDomain: 'nyimpang-cooperative.firebaseapp.com',
+    storageBucket: 'nyimpang-cooperative.appspot.com',
+    measurementId: 'G-1K0E0QL30G',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCVEzJlcyIOaH8FglFzzstmddx-d4K9_BE',
-    appId: '1:676706330164:android:2533323144ad7165704c61',
-    messagingSenderId: '676706330164',
-    projectId: 'user-app-robby',
-    databaseURL: 'https://user-app-robby-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'user-app-robby.appspot.com',
+    apiKey: 'AIzaSyDPEPv6acq9NCEJF0F7W22eqnsQywIP1m0',
+    appId: '1:833957584926:android:06f7a85d3622b4a3408e0f',
+    messagingSenderId: '833957584926',
+    projectId: 'nyimpang-cooperative',
+    storageBucket: 'nyimpang-cooperative.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyChdyaL2K5H1n8Ya-Pj9lF5LWVTe4XY4Pg',
-    appId: '1:676706330164:ios:254a45ac0bfd4c1e704c61',
-    messagingSenderId: '676706330164',
-    projectId: 'user-app-robby',
-    databaseURL: 'https://user-app-robby-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'user-app-robby.appspot.com',
+    apiKey: 'AIzaSyApER2wlTI5ZeluFxuBQ3W8uVcL4LENXmw',
+    appId: '1:833957584926:ios:4d39144dee039f60408e0f',
+    messagingSenderId: '833957584926',
+    projectId: 'nyimpang-cooperative',
+    storageBucket: 'nyimpang-cooperative.appspot.com',
     iosBundleId: 'com.nyimpang.nyimpangCooperative',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyChdyaL2K5H1n8Ya-Pj9lF5LWVTe4XY4Pg',
-    appId: '1:676706330164:ios:5dba41aafdf91fe9704c61',
-    messagingSenderId: '676706330164',
-    projectId: 'user-app-robby',
-    databaseURL: 'https://user-app-robby-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'user-app-robby.appspot.com',
+    apiKey: 'AIzaSyApER2wlTI5ZeluFxuBQ3W8uVcL4LENXmw',
+    appId: '1:833957584926:ios:54e13992a2bb4297408e0f',
+    messagingSenderId: '833957584926',
+    projectId: 'nyimpang-cooperative',
+    storageBucket: 'nyimpang-cooperative.appspot.com',
     iosBundleId: 'com.nyimpang.nyimpangCooperative.RunnerTests',
   );
 }
